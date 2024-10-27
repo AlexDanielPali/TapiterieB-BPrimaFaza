@@ -1,3 +1,4 @@
+/* Stiluri de bază */
 * {
     margin: 0;
     padding: 0;
@@ -6,16 +7,14 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-image:url(fundal1.jpg);
-    background-size: cover; /* Imaginea va fi scalată să încapă complet */
-    background-position: center; /* Centrează imaginea */
-    background-repeat: no-repeat; /* Previne repetarea imaginii */
-    background-attachment:fixed;
+    background-image: url(fundal1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: #ffe4b5;
     line-height: 1.6;
 }
-
-
 
 .container {
     width: 92%;
@@ -23,6 +22,7 @@ body {
     max-width: 1200px;
 }
 
+/* Stiluri generale pentru layout */
 header {
     background: #ffe4b5;
     color: #191970;
@@ -60,8 +60,7 @@ header nav ul li a:hover {
     background-color: #191970;
     color: #ffe4b5;
 }
-
-.container-home1, .container-home2 {
+.container-home1, .container-home2, .container-about, .container-contact {
     color: #191970;
     padding: 40px 20px;
     margin-top: 20px;
@@ -248,7 +247,7 @@ header nav ul li a:hover {
 }
 
 /* Pentru butoanele de social media din secțiunea de contact */
-.contact-social-button {
+.contact-social-button, .social-button {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -259,13 +258,11 @@ header nav ul li a:hover {
     border-radius: 5px;
     background-color: #ffe4b5;
     transition: background-color 0.3s ease;
-    max-width: 300px;
-    margin: 5px auto;
 }
 
-.contact-social-button:hover {
+.contact-social-button:hover, .social-button:hover {
     background-color: #191970;
-    color:#ffe4b5;
+    color: #ffe4b5;
 }
 
 .contact-social-button i {
@@ -282,6 +279,20 @@ header nav ul li a:hover {
 
 /* Media query pentru ecrane mai mici */
 @media (max-width: 768px) {
+    /* Layout pentru tabletă */
+    .top-bar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Secțiuni de text și imagini */
+    .home-text h1, .home-text h2 {
+        font-size: 1.2em;
+    }
     .image-frame {
         width: 250px;
         height: 250px;
@@ -290,6 +301,53 @@ header nav ul li a:hover {
     .swiper-button-prev, .swiper-button-next {
         width: 30px;
         height: 30px;
+    }
+
+    /* Aranjare pentru butoanele de social media */
+    .social-media-buttons, .social-media {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Layout pentru telefoane */
+    .logo img {
+        width: 100px;
+    }
+
+    .top-bar, .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .navbar ul li {
+        margin: 5px 0;
+    }
+
+    .home-text h1 {
+        font-size: 24px;
+    }
+    .home-text h2 {
+        font-size: 16px;
+    }
+
+    /* Secțiunea de social media */
+    .social-media-buttons, .social-media {
+        align-items: center;
+        width: 100%;
+    }
+
+    .contact-social-button, .social-button {
+        font-size: 0.9em;
+        padding: 8px;
     }
 }
 
@@ -301,9 +359,9 @@ footer {
 }
 
 .footer-container p {
-    font-size: 16px; /* Mărimea textului (ajustează după preferințe) */
-    margin: 5px 0; /* Spațiu între paragrafe */
-    font-weight: bold; /* Face textul boldat */
+    font-size: 16px;
+    margin: 5px 0;
+    font-weight: bold;
 }
 .footer-content{
     display: flex;
