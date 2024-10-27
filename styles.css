@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    max-width: 100vw;
 }
 
 body {
@@ -14,10 +15,11 @@ body {
     background-attachment: fixed;
     color: #ffe4b5;
     line-height: 1.6;
-    overflow-x: auto;
-    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 .container {
@@ -158,6 +160,9 @@ header nav ul li a:hover {
     text-align:center;
 }
 
+.swiper-container {
+    max-width: 100%;
+}
 /* Stiluri pentru săgeți lângă imagini */
 .swiper-button-prev, .swiper-button-next {
     color: #ffe4b5;
