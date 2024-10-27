@@ -20,6 +20,9 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .container {
@@ -66,11 +69,15 @@ header nav ul li a:hover {
     background-color: #191970;
     color: #ffe4b5;
 }
-.container-home1, .container-home2, .container-about, .container-contact {
+.container-home1, .container-home2, .container-before-after .container-about, .container-contact {
     color: #191970;
-    padding: 40px 20px;
     margin-top: 20px;
     border-radius: 10px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; 
 }
 
 .home-text-box {
@@ -135,8 +142,8 @@ header nav ul li a:hover {
 }
 
 .home-images-container .image-frame img {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 5px;
 }
@@ -153,15 +160,19 @@ header nav ul li a:hover {
 }
 
 .before-after-swiper .image-frame img {
-    width: 100%; /* Ajustează lățimea fiecărei imagini, astfel încât să împartă spațiul */
-    height: 100%;
+    max-width: 100%;
+    height: auto;
     border-radius: 10px;
     object-fit: cover;
     text-align:center;
 }
 
-.swiper-container {
+.swiper-container, .swiper-slide, .image-frame {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     max-width: 100%;
+    overflow: hidden;
 }
 /* Stiluri pentru săgeți lângă imagini */
 .swiper-button-prev, .swiper-button-next {
@@ -177,7 +188,7 @@ header nav ul li a:hover {
     top: 50%;
     transform: translateY(-50%);
     transition: background-color 0.3s ease;
-    z-index: 10;
+    z-index: 1;
 }
 
 .swiper-button-prev {
@@ -324,6 +335,13 @@ header nav ul li a:hover {
         flex-direction: column;
         text-align: center;
     }
+
+    .home-images-container .image-frame,
+    .before-after-swiper .image-frame {
+        width: 100%;
+        height: auto;
+        max-width: 100vw;
+    }
 }
 
 @media (max-width: 480px) {
@@ -361,11 +379,18 @@ header nav ul li a:hover {
 }
 
 footer {
-    background-color: #ffe4b5; /* Culoarea de fundal a footer-ului */
-    color: #191970; /* Culoarea textului */
-    text-align: center; 
-    padding: 20px 0; /* Spațiu interior */
-    margin-top: auto;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color:  #ffe4b5; /* Ajustează această culoare pentru a corespunde designului dorit */
+    color: #191970;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 100%;
+    overflow: hidden; /* Elimină overflow-ul în footer */
 }
 
 .footer-container p {
@@ -379,6 +404,13 @@ footer {
     align-items: center;
     justify-content: center;
 }
+
+.footer-contact-box, .social-media-box {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
 .footer .social-media-buttons{
     display: flex;
     flex-direction: column;
