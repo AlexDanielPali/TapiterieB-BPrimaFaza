@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    max-width: 100vw;
 }
 
 body {
@@ -20,9 +19,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 .container {
@@ -69,7 +65,7 @@ header nav ul li a:hover {
     background-color: #191970;
     color: #ffe4b5;
 }
-.container-home1, .container-home2, .container-before-after .container-about, .container-contact {
+.container-home1, .container-home2, .container-about, .container-contact {
     color: #191970;
     margin-top: 20px;
     border-radius: 10px;
@@ -104,15 +100,12 @@ header nav ul li a:hover {
 
 .home-text .cta {
     display: inline-block;
-    margin: 20px auto;
     padding: 15px 30px;
     background-color: #191970;
     color: #ffe4b5;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 18px;
     transition: background-color 0.3s ease;
-    text-align: center;
 }
 
 .home-text .cta:hover {
@@ -211,6 +204,7 @@ header nav ul li a:hover {
     color: #191970;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width:100%
 }
 
 /* Efect hover pentru fiecare serviciu */
@@ -306,6 +300,7 @@ header nav ul li a:hover {
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .album-grid img:hover {
@@ -386,6 +381,7 @@ header nav ul li a:hover {
     border-radius: 5px;
     background-color: #ffe4b5;
     transition: background-color 0.3s ease;
+    font-size:16px;
 }
 
 .contact-social-button:hover{
@@ -449,11 +445,15 @@ header nav ul li a:hover {
         height: auto;
         max-width: 100vw;
     }
+
+    .album-grid img{
+        height:200px;
+    }
 }
 
 @media (max-width: 480px) {
     /* Layout pentru telefoane */
-    .logo img {
+    header .logo img {
         width: 100px;
     }
 
@@ -483,16 +483,23 @@ header nav ul li a:hover {
         font-size: 0.9em;
         padding: 8px;
     }
+    .service-box, .contact-social-button {
+        flex-direction: column;
+        text-align: center;
+    }
+    .social-media-buttons, .footer-content {
+        flex-direction: column;
+    }
 }
 
 footer {
     position: relative;
-    bottom: 0;
     width: 100%;
     background-color: #ffe4b5;
     color: #191970;
     padding: 20px;
     text-align: center;
+    margin-top:auto;
 }
 
 .footer-container {
@@ -512,6 +519,7 @@ footer {
     gap: 20px;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .footer-contact-box, .social-media-box {
